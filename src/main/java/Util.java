@@ -1,8 +1,10 @@
 import Domain.Change;
+import Domain.InvalidResponse;
 import Domain.Response;
 import Domain.TimeLine;
 import Domain.Usuario;
 import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import java.io.IOException;
@@ -15,21 +17,10 @@ import java.util.Map;
  * Created by juan.portillo on 21/03/16.
  */
 public class Util {
-    public static Response mapper(String jsonInString) {
-        ObjectMapper mapper = new ObjectMapper();
-        Response res = null;
+    static ObjectMapper mapper = new ObjectMapper();
 
-        try {
-            res = mapper.readValue(jsonInString, Response.class);
-        } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return res;
+    public static Response mapper(String jsonInString) throws IOException {
+        return mapper.readValue(jsonInString, Response.class);
     }
 
     public static List<Change> getChanges (Response response) {
@@ -61,5 +52,10 @@ public class Util {
             }
         }
         return changesRank;
+    }
+
+    public static String getCSFRCode(String s) throws IOException {
+        InvalidResponse invalidResponse = mapper.readValue(s, InvalidResponse.class);
+        return invalidResponse.getRemCSRF();
     }
 }
