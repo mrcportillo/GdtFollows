@@ -11,7 +11,7 @@ public enum RequestEnum {
     PROXY_CONNECTION_KEY("Proxy-Connection"),
     PROXY_CONNECTION_VALUE("keep-alive"),
     HOST("host"),
-    POST("Post"),
+    POST("POST"),
     CONTENT_TYPE_KEY("Content-Type"),
     CONTENT_TYPE_VALUE("application/x-www-form-urlencoded"),
     CHARSET_KEY("charset"),

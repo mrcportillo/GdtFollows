@@ -1,5 +1,7 @@
+import Exceptions.ExpiredSessionException;
 import GdtRequest.GdtHttpGetRequest;
 import GdtRequest.GdtHttpPostRequest;
+import Util.Util;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,19 +18,25 @@ public class MainCrawler {
         try {
             GdtHttpPostRequest gdtHttpPostRequest =
                     new GdtHttpPostRequest(UrlEnum.BASE_URL.getText(),
-                    UrlEnum.POST_URL.getText(), PROXY);
-            gdtHttpPostRequest.makeLogInRequest("","");
-
+                    UrlEnum.POST_URL.getText());
+            gdtHttpPostRequest.makeLogInRequest(args[1], args[0]);
+            gdtHttpPostRequest.setSessionId();
             GdtHttpGetRequest gdtHttpGetRequest =
-                    new GdtHttpGetRequest(UrlEnum.BASE_URL.getText(),
-                            gdtHttpPostRequest.getSessionId());
+                    new GdtHttpGetRequest();
 
-            gdtHttpGetRequest.getJsonResponse(gdtHttpGetRequest.makeChangesRequest(
-                    UrlEnum.BASE_URL.getText(),
-                    UrlEnum.POST_URL.getText(),
-                    "321654"));
-            
+            System.out.println(
+                    Util.getChangesRank(
+                            Util.getChanges(
+                                    Util.mapper(
+                                            gdtHttpGetRequest.getJsonResponse(
+                                                    gdtHttpGetRequest.makeChangesRequest(
+                                                            UrlEnum.BASE_URL.getText(),
+                                                            UrlEnum.GET_URL.getText(),
+                                                            "068869",
+                                                            gdtHttpPostRequest.getSessionId()))))));
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ExpiredSessionException e) {
             e.printStackTrace();
         }
     }

@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
  * Created by juan.portillo on 23/03/16.
  */
 public class GdtHttpPostRequest {
+
     private HttpURLConnection connection;
     private String sessionId;
 
@@ -44,10 +45,9 @@ public class GdtHttpPostRequest {
         connection.setUseCaches(false);
         DataOutputStream wr = new DataOutputStream(connection.getOutputStream());
         wr.write(postData);
-
     }
 
-    public void setSessionId(HttpURLConnection connection) {
+    public void setSessionId() {
         String headerName;
         CharSequence sessionSec = "JSESSIONID";
         for (int i = 1; (headerName = connection.getHeaderFieldKey(i)) != null; i++) {
@@ -56,6 +56,10 @@ public class GdtHttpPostRequest {
                 sessionId = connection.getHeaderField(i).split(";")[0];
             }
         }
+    }
+
+    public HttpURLConnection getConnection() {
+        return connection;
     }
 
     public String getSessionId() {
