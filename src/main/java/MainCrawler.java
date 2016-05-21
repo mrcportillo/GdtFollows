@@ -19,7 +19,8 @@ public class MainCrawler {
             GdtHttpPostRequest gdtHttpPostRequest =
                     new GdtHttpPostRequest(UrlEnum.BASE_URL.getText(),
                     UrlEnum.POST_URL.getText());
-            gdtHttpPostRequest.makeLogInRequest(args[1], args[0]);
+//            gdtHttpPostRequest.makeLogInRequest(args[0], args[1]);
+            gdtHttpPostRequest.makeLogInRequest("3569o8O2", "35690802");
             gdtHttpPostRequest.setSessionId();
             GdtHttpGetRequest gdtHttpGetRequest =
                     new GdtHttpGetRequest();
