@@ -12,6 +12,8 @@ public class User {
 
     private String replCamiseta;
 
+    private String replCamisetaCsv;
+
     private String visible;
 
     private String replNombreApellido;
@@ -98,6 +100,14 @@ public class User {
     public void setReplNombreEquipo (String replNombreEquipo)
     {
         this.replNombreEquipo = replNombreEquipo;
+    }
+
+    public String getReplCamisetaCsv() {
+        return replCamisetaCsv;
+    }
+
+    public void setReplCamisetaCsv(String replCamisetaCsv) {
+        this.replCamisetaCsv = replCamisetaCsv;
     }
 
     @Override
