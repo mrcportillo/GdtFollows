@@ -13,3 +13,8 @@ addons:
     build_command_prepend: "mvn clean"
     build_command:   "mvn test"
     branch_pattern: master
+
+deploy:
+  provider: gae
+  keyfile: "client-secret.json"
+  project: "gdt-follows"
