@@ -7,9 +7,8 @@ env:
 
 addons:
   coverity_scan:
-    project: "gdtFollows"
+    project:
       name: "mrcportillo/GdtFollows"
-      description: "<Your project description here>"
     notification_email: marcossportillo@gmail.com
     build_command_prepend: "mvn clean"
     build_command:   "mvn test"
