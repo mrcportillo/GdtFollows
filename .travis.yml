@@ -12,4 +12,4 @@ addons:
     notification_email: marcossportillo@gmail.com
     build_command_prepend: "mvn clean"
     build_command:   "mvn test"
-    branch_pattern: coverity_scan
+    branch_pattern: master
