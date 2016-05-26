@@ -1,20 +1,8 @@
-language: java
-env:
-  global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-   - secure: "uaJaIotxn27IB32+qq5jMBLrx3vQcnOCNJVQbXRNbeCMqREnP1102+hfIe8pM+RIb2zaQOQW/tajybiVkfALFMt1D26CHukcCUbYNbcNMFLEPkZn0FdZJr7zrXyu54VNa0CVeef/Px7CCa3HcLGVMgssd7Pd8cGF8gV6M2Ff7ohnBdFMO/RsUcIR6HVjImkfgTewDiswESymwgcklmg7oEELbSjIKw36+b8RI8bI+iaLqtGw+aCYu6A9Q9VOKEcRPuBf2NhUmCOWla1SENTgLrkCAYl8zpcwrzNxZIVcYehXOfrUQzDBMgcUQjfhKhry8RSs70wgKPM9WZNwsNHqcihdKD8AO8U9hMdCCyQqzGIlLLiREFA59BWETf1X5Ah4zAKuLWUJmn0vWluHPTzFhIkF17duCXhzyj/mIwMEPo/WxsSrQX1h2gnUz6VbG/k8wF8qWEGUoDOr4UxTRBo/+JcDmifPQhRrjwFLe7JduoGiwrwreVvjdPXqbvQQbpSqNPJvHaIDiWynXqZ9JRafIT44ODVK5faydxB/jCVt/Fb3rbx8Es6Tg8pvKR8JuJA/j7zWtKU2ngDzJAAC0ozleKGAG9c7yQkpYT5QVfBYnXzK/D1vdRdfX/gRDWZcDA0X1Z0sNrsH/7P6uSQOp566lLZxfuV9BcGGDLdrGKuwUkQ="
+application: gdt-follows
+version: 1
+runtime: go
+api_version: go1
 
-addons:
-  coverity_scan:
-    project:
-      name: "mrcportillo/GdtFollows"
-    notification_email: marcossportillo@gmail.com
-    build_command_prepend: "mvn clean"
-    build_command:   "mvn test"
-    branch_pattern: master
-
-deploy:
-  provider: gae
-  keyfile: "client-secret.json"
-  project: "gdt-follows"
+handlers:
+- url: /.*
+  script: _go_app
