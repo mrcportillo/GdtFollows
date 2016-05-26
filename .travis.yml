@@ -16,5 +16,5 @@ addons:
 
 deploy:
   provider: gae
-  keyfile: "client-secret.json"
+  keyfile: "client-secret.json.enc"
   project: "gdt-follows"
