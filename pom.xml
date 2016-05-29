@@ -6,6 +6,13 @@
     <groupId>GDT</groupId>
     <artifactId>GDT-FOLLOW</artifactId>
     <version>1.1-SNAPSHOT</version>
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>gdtfollows-releases</name>
+            <url>https://gdtfollows.jfrog.io/gdtfollows/libs-release-local</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
