@@ -11,10 +11,10 @@ addons:
       name: "mrcportillo/GdtFollows"
     notification_email: marcossportillo@gmail.com
     build_command_prepend: "mvn clean"
-    build_command:   "mvn test"
+    build_command:   "mvn deploy"
     branch_pattern: master
 
-deploy:
-  provider: gae
-  keyfile: "client-secret.json.enc"
-  project: "gdt-follows"
+# deploy:
+#   provider: gae
+#   keyfile: "client-secret.json.enc"
+#   project: "gdt-follows"
