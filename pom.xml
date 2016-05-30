@@ -100,5 +100,15 @@
             <enabled>false</enabled>
         </releases>
     </repository>
-</repositories>
+    </repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <id>central</id>
+        <name>bintray-plugins</name>
+        <url>http://jcenter.bintray.com</url>
+    </pluginRepository>
+</pluginRepositories>
 </project>
