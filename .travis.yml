@@ -11,7 +11,7 @@ addons:
       name: "mrcportillo/GdtFollows"
     notification_email: marcossportillo@gmail.com
     build_command_prepend: "mvn clean"
-    build_command:   "mvn deploy"
+    build_command:   "mvn deploy -Dusername=admin -Dpassword=rw1KKDS57K"
     branch_pattern: master
 
 # deploy:
