@@ -46,20 +46,5 @@
         </releases>
     </repository>
 </repositories>
-<pluginRepositories>
-    <pluginRepository>
-        <id>central</id>
-        <url>http://gdtfollows.jfrog.io/gdtfollows/plugins-release</url>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-        <id>snapshots</id>
-        <url>http://http://gdtfollows.jfrog.io/gdtfollows/plugins-snapshot</url>
-        <releases>
-            <enabled>false</enabled>
-        </releases>
-    </pluginRepository>
-</pluginRepositories>
+
 </project>
