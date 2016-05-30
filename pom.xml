@@ -5,13 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>GDT</groupId>
     <artifactId>GDT-FOLLOW</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <distributionManagement>
         <repository>
             <id>central</id>
             <name>gdtfollows-releases</name>
             <url>https://gdtfollows.jfrog.io/gdtfollows/libs-release-local</url>
         </repository>
+        <snapshotRepository>
+          <id>snapshots</id>
+          <name>gdtfollows-snapshots</name>
+          <url>https://gdtfollows.jfrog.io/gdtfollows/libs-snapshot-local</url>
+      </snapshotRepository>
     </distributionManagement>
     <dependencies>
         <dependency>
@@ -25,4 +30,36 @@
             <version>1.3.2</version>
         </dependency>
     </dependencies>
+    <repositories>
+    <repository>
+        <id>central</id>
+        <url>http://gdtfollows.jfrog.io/gdtfollows/libs-release</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+    <repository>
+        <id>snapshots</id>
+        <url>http://gdtfollows.jfrog.io/gdtfollows/libs-snapshot</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>central</id>
+        <url>http://gdtfollows.jfrog.io/gdtfollows/plugins-release</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+        <id>snapshots</id>
+        <url>http://http://gdtfollows.jfrog.io/gdtfollows/plugins-snapshot</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+    </pluginRepository>
+</pluginRepositories>
 </project>
