@@ -72,7 +72,7 @@
                                 <review.team>qa</review.team>
                             </deployProperties>
                             <publisher>
-                                <contextUrl>https://oss.jfrog.org</contextUrl>
+                                <contextUrl>https://gdtfollows.jfrog.io/gdtfollows</contextUrl>
                                 <username>${username}</username>
                                 <password>${password}</password>
                                 <repoKey>libs-release-local</repoKey>
