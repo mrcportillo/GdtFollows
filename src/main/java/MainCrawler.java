@@ -33,7 +33,7 @@ public class MainCrawler {
                                                     gdtHttpGetRequest.makeChangesRequest(
                                                             UrlEnum.BASE_URL.getText(),
                                                             UrlEnum.GET_URL.getText(),
-                                                            "068869",
+                                                            "0068869",
                                                             gdtHttpPostRequest.getSessionId()))))));
         } catch (IOException e) {
             e.printStackTrace();
@@ -44,4 +44,3 @@ public class MainCrawler {
 
 
 }
-
